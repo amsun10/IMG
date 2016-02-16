@@ -21,6 +21,8 @@ class CImgParser:
 
     def GetImgs(self,):
         Summary = []
+        if not os.path.exists("pics"):
+            os.mkdir(r"pics")
         os.chdir(r"pics/")
         for i in range(PAGE_COUNT):
             URL = self.RequestURL % (i+1)
